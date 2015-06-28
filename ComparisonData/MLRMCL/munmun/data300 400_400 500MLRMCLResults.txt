@@ -1,0 +1,76 @@
+Cluster Number 23 (t:300 400): Total : 2 Nodes ===> 
+Cluster Number 18 (t:400 500): 1 Nodes from (t:300 400) 5 New Nodes | Total: 6 Nodes
+Cluster Number 32 (t:400 500): 1 Nodes from (t:300 400) 0 New Nodes | Total: 1 Nodes
+-------------------------------
+Cluster Number 35 (t:300 400): Total : 2 Nodes ===> 
+Cluster Number 42 (t:400 500): 1 Nodes from (t:300 400) 3 New Nodes | Total: 4 Nodes
+-------------------------------
+Cluster Number 47 (t:300 400): Total : 2 Nodes ===> 
+Cluster Number 35 (t:400 500): 1 Nodes from (t:300 400) 5 New Nodes | Total: 6 Nodes
+-------------------------------
+Cluster Number 4 (t:300 400): Total : 8 Nodes ===> 
+Cluster Number 6 (t:400 500): 1 Nodes from (t:300 400) 10 New Nodes | Total: 11 Nodes
+Cluster Number 21 (t:400 500): 1 Nodes from (t:300 400) 3 New Nodes | Total: 4 Nodes
+Cluster Number 26 (t:400 500): 1 Nodes from (t:300 400) 7 New Nodes | Total: 8 Nodes
+-------------------------------
+Cluster Number 31 (t:300 400): Total : 2 Nodes ===> 
+Cluster Number 13 (t:400 500): 1 Nodes from (t:300 400) 3 New Nodes | Total: 4 Nodes
+Cluster Number 29 (t:400 500): 1 Nodes from (t:300 400) 4 New Nodes | Total: 5 Nodes
+-------------------------------
+Cluster Number 12 (t:300 400): Total : 12 Nodes ===> 
+Cluster Number 6 (t:400 500): 1 Nodes from (t:300 400) 10 New Nodes | Total: 11 Nodes
+Cluster Number 8 (t:400 500): 1 Nodes from (t:300 400) 7 New Nodes | Total: 8 Nodes
+Cluster Number 16 (t:400 500): 1 Nodes from (t:300 400) 15 New Nodes | Total: 16 Nodes
+-------------------------------
+Cluster Number 24 (t:300 400): Total : 4 Nodes ===> 
+Cluster Number 6 (t:400 500): 1 Nodes from (t:300 400) 10 New Nodes | Total: 11 Nodes
+-------------------------------
+Cluster Number 36 (t:300 400): Total : 2 Nodes ===> 
+Cluster Number 21 (t:400 500): 1 Nodes from (t:300 400) 3 New Nodes | Total: 4 Nodes
+-------------------------------
+Cluster Number 48 (t:300 400): Total : 2 Nodes ===> 
+Cluster Number 19 (t:400 500): 1 Nodes from (t:300 400) 1 New Nodes | Total: 2 Nodes
+Cluster Number 9 (t:400 500): 1 Nodes from (t:300 400) 1 New Nodes | Total: 2 Nodes
+-------------------------------
+Cluster Number 16 (t:300 400): Total : 6 Nodes ===> 
+Cluster Number 27 (t:400 500): 1 Nodes from (t:300 400) 3 New Nodes | Total: 4 Nodes
+-------------------------------
+Cluster Number 3 (t:300 400): Total : 7 Nodes ===> 
+Cluster Number 29 (t:400 500): 1 Nodes from (t:300 400) 4 New Nodes | Total: 5 Nodes
+Cluster Number 12 (t:400 500): 1 Nodes from (t:300 400) 11 New Nodes | Total: 12 Nodes
+Cluster Number 16 (t:400 500): 1 Nodes from (t:300 400) 15 New Nodes | Total: 16 Nodes
+-------------------------------
+Cluster Number 32 (t:300 400): Total : 6 Nodes ===> 
+Cluster Number 6 (t:400 500): 1 Nodes from (t:300 400) 10 New Nodes | Total: 11 Nodes
+Cluster Number 12 (t:400 500): 1 Nodes from (t:300 400) 11 New Nodes | Total: 12 Nodes
+-------------------------------
+Cluster Number 33 (t:300 400): Total : 2 Nodes ===> 
+Cluster Number 16 (t:400 500): 1 Nodes from (t:300 400) 15 New Nodes | Total: 16 Nodes
+-------------------------------
+Cluster Number 25 (t:300 400): Total : 4 Nodes ===> 
+Cluster Number 26 (t:400 500): 1 Nodes from (t:300 400) 7 New Nodes | Total: 8 Nodes
+-------------------------------
+Cluster Number 37 (t:300 400): Total : 2 Nodes ===> 
+Cluster Number 16 (t:400 500): 1 Nodes from (t:300 400) 15 New Nodes | Total: 16 Nodes
+-------------------------------
+Cluster Number 17 (t:300 400): Total : 2 Nodes ===> 
+Cluster Number 37 (t:400 500): 1 Nodes from (t:300 400) 1 New Nodes | Total: 2 Nodes
+-------------------------------
+Cluster Number 2 (t:300 400): Total : 22 Nodes ===> 
+Cluster Number 29 (t:400 500): 1 Nodes from (t:300 400) 4 New Nodes | Total: 5 Nodes
+Cluster Number 8 (t:400 500): 2 Nodes from (t:300 400) 6 New Nodes | Total: 8 Nodes
+-------------------------------
+Cluster Number 21 (t:300 400): Total : 6 Nodes ===> 
+Cluster Number 4 (t:400 500): 1 Nodes from (t:300 400) 1 New Nodes | Total: 2 Nodes
+Cluster Number 12 (t:400 500): 1 Nodes from (t:300 400) 11 New Nodes | Total: 12 Nodes
+-------------------------------
+Cluster Number 34 (t:300 400): Total : 4 Nodes ===> 
+Cluster Number 31 (t:400 500): 1 Nodes from (t:300 400) 1 New Nodes | Total: 2 Nodes
+Cluster Number 12 (t:400 500): 1 Nodes from (t:300 400) 11 New Nodes | Total: 12 Nodes
+-------------------------------
+Cluster Number 18 (t:300 400): Total : 3 Nodes ===> 
+Cluster Number 3 (t:400 500): 1 Nodes from (t:300 400) 1 New Nodes | Total: 2 Nodes
+-------------------------------
+Cluster Number 30 (t:300 400): Total : 6 Nodes ===> 
+Cluster Number 11 (t:400 500): 1 Nodes from (t:300 400) 1 New Nodes | Total: 2 Nodes
+-------------------------------

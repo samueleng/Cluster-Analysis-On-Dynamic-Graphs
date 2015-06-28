@@ -1,0 +1,53 @@
+Cluster Number 39 :(t:0 100): Total : 2 Nodes ===> 
+Cluster Number 18 :(t:100 200): 1 Nodes from (t:0 100) 1 New Nodes | Total: 2 Nodes
+Cluster Number 17 :(t:100 200): 1 Nodes from (t:0 100) 2 New Nodes | Total: 3 Nodes
+-------------------------------
+Cluster Number 37 :(t:0 100): Total : 2 Nodes ===> 
+Cluster Number 14 :(t:100 200): 1 Nodes from (t:0 100) 4 New Nodes | Total: 5 Nodes
+Cluster Number 13 :(t:100 200): 1 Nodes from (t:0 100) 7 New Nodes | Total: 8 Nodes
+-------------------------------
+Cluster Number 12 :(t:0 100): Total : 2 Nodes ===> 
+Cluster Number 2 :(t:100 200): 1 Nodes from (t:0 100) 7 New Nodes | Total: 8 Nodes
+-------------------------------
+Cluster Number 9 :(t:0 100): Total : 2 Nodes ===> 
+Cluster Number 8 :(t:100 200): 1 Nodes from (t:0 100) 9 New Nodes | Total: 10 Nodes
+-------------------------------
+Cluster Number 7 :(t:0 100): Total : 3 Nodes ===> 
+Cluster Number 4 :(t:100 200): 1 Nodes from (t:0 100) 23 New Nodes | Total: 24 Nodes
+-------------------------------
+Cluster Number 46 :(t:0 100): Total : 11 Nodes ===> 
+Cluster Number 10 :(t:100 200): 1 Nodes from (t:0 100) 3 New Nodes | Total: 4 Nodes
+-------------------------------
+Cluster Number 48 :(t:0 100): Total : 4 Nodes ===> 
+Cluster Number 9 :(t:100 200): 1 Nodes from (t:0 100) 9 New Nodes | Total: 10 Nodes
+-------------------------------
+Cluster Number 42 :(t:0 100): Total : 2 Nodes ===> 
+Cluster Number 8 :(t:100 200): 1 Nodes from (t:0 100) 9 New Nodes | Total: 10 Nodes
+-------------------------------
+Cluster Number 21 :(t:0 100): Total : 2 Nodes ===> 
+Cluster Number 4 :(t:100 200): 1 Nodes from (t:0 100) 23 New Nodes | Total: 24 Nodes
+Cluster Number 12 :(t:100 200): 1 Nodes from (t:0 100) 3 New Nodes | Total: 4 Nodes
+-------------------------------
+Cluster Number 38 :(t:0 100): Total : 2 Nodes ===> 
+Cluster Number 4 :(t:100 200): 1 Nodes from (t:0 100) 23 New Nodes | Total: 24 Nodes
+-------------------------------
+Cluster Number 6 :(t:0 100): Total : 3 Nodes ===> 
+Cluster Number 4 :(t:100 200): 1 Nodes from (t:0 100) 23 New Nodes | Total: 24 Nodes
+Cluster Number 3 :(t:100 200): 1 Nodes from (t:0 100) 2 New Nodes | Total: 3 Nodes
+Cluster Number 11 :(t:100 200): 1 Nodes from (t:0 100) 1 New Nodes | Total: 2 Nodes
+-------------------------------
+Cluster Number 4 :(t:0 100): Total : 2 Nodes ===> 
+Cluster Number 2 :(t:100 200): 1 Nodes from (t:0 100) 7 New Nodes | Total: 8 Nodes
+-------------------------------
+Cluster Number 11 :(t:0 100): Total : 2 Nodes ===> 
+Cluster Number 2 :(t:100 200): 1 Nodes from (t:0 100) 7 New Nodes | Total: 8 Nodes
+-------------------------------
+Cluster Number 36 :(t:0 100): Total : 2 Nodes ===> 
+Cluster Number 8 :(t:100 200): 1 Nodes from (t:0 100) 9 New Nodes | Total: 10 Nodes
+-------------------------------
+Cluster Number 8 :(t:0 100): Total : 10 Nodes ===> 
+Cluster Number 9 :(t:100 200): 1 Nodes from (t:0 100) 9 New Nodes | Total: 10 Nodes
+-------------------------------
+Cluster Number 47 :(t:0 100): Total : 4 Nodes ===> 
+Cluster Number 8 :(t:100 200): 1 Nodes from (t:0 100) 9 New Nodes | Total: 10 Nodes
+-------------------------------

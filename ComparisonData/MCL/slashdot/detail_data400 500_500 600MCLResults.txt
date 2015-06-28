@@ -1,0 +1,93 @@
+Cluster Number 31 (t:400 500): [1520, 17040, 4740] ===> 
+Cluster Number 30 (t:500 600): [16992, 17040]
+New Nodes: [16992]
+Cluster Number 34 (t:500 600): [4740, 4772]
+New Nodes: [4772]
+
+Cluster Number 5 (t:400 500): [16945, 16946, 16977, 17014, 17034, 17047] ===> 
+Cluster Number 23 (t:500 600): [16946, 17047]
+New Nodes: []
+
+Cluster Number 8 (t:400 500): [101, 271, 4661, 6332] ===> 
+Cluster Number 6 (t:500 600): [101, 16959, 6332]
+New Nodes: [16959]
+Cluster Number 2 (t:500 600): [15188, 271]
+New Nodes: [15188]
+
+Cluster Number 32 (t:400 500): [13353, 14962, 2453] ===> 
+Cluster Number 11 (t:500 600): [16973, 2453]
+New Nodes: [16973]
+Cluster Number 16 (t:500 600): [13353, 16954, 3219]
+New Nodes: [16954, 3219]
+
+Cluster Number 1 (t:400 500): [16940, 16941, 16985, 16989, 17033, 17036, 17053, 17055, 17082, 17112, 4680] ===> 
+Cluster Number 9 (t:500 600): [16985, 59, 6658]
+New Nodes: [59, 6658]
+Cluster Number 7 (t:500 600): [16941, 16981, 17005, 17048, 17103, 4128, 4396, 8183]
+New Nodes: [16981, 17005, 17048, 17103, 4128, 4396, 8183]
+
+Cluster Number 39 (t:400 500): [15188, 15962] ===> 
+Cluster Number 2 (t:500 600): [15188, 271]
+New Nodes: [271]
+Cluster Number 21 (t:500 600): [15962, 16997]
+New Nodes: [16997]
+
+Cluster Number 38 (t:400 500): [16954] ===> 
+Cluster Number 16 (t:500 600): [13353, 16954, 3219]
+New Nodes: [13353, 3219]
+
+Cluster Number 24 (t:400 500): [3311, 669] ===> 
+Cluster Number 31 (t:500 600): [669, 6793]
+New Nodes: [6793]
+
+Cluster Number 22 (t:400 500): [16938, 461] ===> 
+Cluster Number 15 (t:500 600): [16938, 17075, 431]
+New Nodes: [17075, 431]
+
+Cluster Number 21 (t:400 500): [10440, 12159, 16965, 686] ===> 
+Cluster Number 35 (t:500 600): [16964, 16965]
+New Nodes: [16964]
+Cluster Number 1 (t:500 600): [10440, 13843, 686]
+New Nodes: [13843]
+
+Cluster Number 28 (t:400 500): [17035, 1949] ===> 
+Cluster Number 8 (t:500 600): [17006, 1949, 8894]
+New Nodes: [17006, 8894]
+
+Cluster Number 27 (t:400 500): [16949, 7141] ===> 
+Cluster Number 36 (t:500 600): [16949, 7141]
+
+Cluster Number 19 (t:400 500): [10860, 17087] ===> 
+Cluster Number 10 (t:500 600): [10860, 17068]
+New Nodes: [17068]
+
+Cluster Number 12 (t:400 500): [16952, 17086, 17097] ===> 
+Cluster Number 4 (t:500 600): [16952, 17001]
+New Nodes: [17001]
+
+Cluster Number 10 (t:400 500): [16960, 2917, 6317] ===> 
+Cluster Number 14 (t:500 600): [16961, 17109, 2917, 6317]
+New Nodes: [16961, 17109]
+
+Cluster Number 14 (t:400 500): [17012, 17041, 5449] ===> 
+Cluster Number 3 (t:500 600): [17012, 3520, 5449, 6246]
+New Nodes: [3520, 6246]
+
+Cluster Number 42 (t:400 500): [16943, 17030, 6516] ===> 
+Cluster Number 33 (t:500 600): [17156, 6516]
+New Nodes: [17156]
+
+Cluster Number 46 (t:400 500): [3221, 5949, 987] ===> 
+Cluster Number 12 (t:500 600): [5949, 987]
+New Nodes: []
+
+Cluster Number 43 (t:400 500): [258, 3219] ===> 
+Cluster Number 16 (t:500 600): [13353, 16954, 3219]
+New Nodes: [13353, 16954]
+
+Cluster Number 49 (t:400 500): [1529, 6012] ===> 
+Cluster Number 29 (t:500 600): [1529, 6012]
+
+Cluster Number 48 (t:400 500): [14349, 15577] ===> 
+Cluster Number 13 (t:500 600): [14349, 15577]
+
