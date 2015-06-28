@@ -1,0 +1,7 @@
+Cluster Number 2 :(t:61 80): Total :5 Nodes ===>
+Cluster Number 2 :(t:81 100): 1 Nodes from (t:61 80) 8 New Nodes | Total:9 Nodes
+-------------------------------------
+Cluster Number 1 :(t:61 80): Total :15 Nodes ===>
+Cluster Number 2 :(t:81 100): 2 Nodes from (t:61 80) 7 New Nodes | Total:9 Nodes
+Cluster Number 1 :(t:81 100): 3 Nodes from (t:61 80) 6 New Nodes | Total:9 Nodes
+-------------------------------------
