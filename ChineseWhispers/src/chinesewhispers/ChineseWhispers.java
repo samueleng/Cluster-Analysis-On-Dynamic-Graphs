@@ -2,13 +2,23 @@ package chinesewhispers;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ChineseWhispers {
 
+    public static int inc = 100;
+
     public static void main(String[] args) throws Exception, IOException {
+        ChineseWhispers.start();
+    }
+
+    public static void start() throws Exception, IOException {
         Scanner userInput = new Scanner(System.in);
-        String file_name, range;
+        String file_name;
+        //String range;
+        String range = "2000 2100,2100 2200";
+        //String range = "9800 9900,9900 10000";
         boolean exists = true;
         int count, start = 0, end;
         Directory();
@@ -19,7 +29,27 @@ public class ChineseWhispers {
         do {
             System.out.println("Enter value of Time Interval separated by comma(,) ");
             System.out.println("Ex. 20 50,51 100");
-            range = userInput.nextLine();
+            //range = userInput.nextLine();
+
+            /*auto generate*/
+            String[] range2 = range.split("\\s*(=>|,|\\s)\\s*");
+            for (int i = 0; i < range2.length; i++) {
+                int k = Integer.parseInt(range2[i]);
+                k += inc;
+                range2[i] = Integer.toString(k);
+                System.out.println(range2[i]);
+            }
+            range = Arrays.toString(range2);
+            range = range.substring(1, range.length() - 1).replaceAll(",", "");
+
+            range = new StringBuilder(range).insert(range.length() - 10, ",").toString(); //to 10000
+            range = new StringBuilder(range).deleteCharAt(range.length() - 10).toString();  //to 10000
+
+            //range = new StringBuilder(range).insert(range.length() - 12, ",").toString();
+            //range = new StringBuilder(range).deleteCharAt(range.length() - 12).toString();
+            System.out.println("Range: " + range);
+
+            /*end of generate*/
             count = range.split(",").length;
             while (count != 0) {
                 String[] interval = range.split(",")[start].split("\\s+");
@@ -42,7 +72,8 @@ public class ChineseWhispers {
 
             String[] compare = range.split(",");
             Utils.compareCluster(compare[0], compare[1]);
-            ChineseWhispers.main(args);
+            inc += 100;
+            ChineseWhispers.start();
 
         } while (!exists);
     }
