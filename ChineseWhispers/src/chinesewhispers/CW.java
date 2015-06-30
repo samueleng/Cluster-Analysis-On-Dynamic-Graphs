@@ -65,7 +65,7 @@ public class CW {
         adjMatrix.get(node2).c[node1] = 1;
         time2 = System.currentTimeMillis();
         String graph_str = "Edge between: " + node1 + " and: " + node2 + "  time: " + (time2 - time1) + "  duration : 1";
-        System.out.println(graph_str);
+        //System.out.println(graph_str);
         try (PrintWriter graph = new PrintWriter(new File(Utils.getFilePath() + "/chinesewhispers/resource/Graph.txt"))) {
             graph.write(graph_str + "\n");
         } catch (FileNotFoundException ex) {

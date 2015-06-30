@@ -60,7 +60,7 @@ public class MCLApp {
         /*Assign corresponding role/column*/
         adjMatrix.get(node1).c[node2] = 1;
         adjMatrix.get(node2).c[node1] = 1;
-        System.out.println("Edge between: " + node1 + " and: " + node2);
+        //System.out.println("Edge between: " + node1 + " and: " + node2);
     }
 
     public void readData(String fileName) throws FileNotFoundException, IOException {
@@ -71,7 +71,8 @@ public class MCLApp {
         FileName = fileName;
         int numberOfEdges = 0;
         boolean empty = true;
-        /*Read datasets from the folder (nodes)*/
+        /*Read datasets from the folder (nodes)*/ 
+        System.out.println(FileName);
         try (BufferedReader inFile = new BufferedReader(new FileReader(new File(Utils.getFilePath() + "/MCLAlgorithm/resource/" + FileName)))) {
             while ((current_line = inFile.readLine()) != null) {
                 empty = false;

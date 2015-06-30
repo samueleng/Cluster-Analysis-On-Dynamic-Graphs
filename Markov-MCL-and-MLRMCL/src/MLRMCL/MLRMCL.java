@@ -7,8 +7,8 @@ import java.util.Scanner;
 
 public class MLRMCL {
 
-    public static int inc = 100; 
-    
+    public static int inc = 100;
+
     public static void main(String[] args) throws IOException {
         MLRMCL.start();
     }
@@ -17,7 +17,8 @@ public class MLRMCL {
         Scanner userInput = new Scanner(System.in);
         String file_name;
         //String range;
-        String range = "2000 2100,2100 2200";
+        String range = "0 100,100 200";
+        //String range = "1000 1100,1100 1200";
         //String range = "9800 9900,9900 10000";
         int count, start = 0, end;
         boolean exists = true;
@@ -40,14 +41,25 @@ public class MLRMCL {
                 range2[i] = Integer.toString(k);
                 System.out.println(range2[i]);
             }
+
             range = Arrays.toString(range2);
             range = range.substring(1, range.length() - 1).replaceAll(",", "");
+            
+            boolean flag = false;
+            for (int i = 0; i < range.length(); i++) {
+                char c = range.charAt(i);
+                System.out.println(flag);
+                if (c == ' ' && flag == true) {
+                    range = replaceCharAt(range, i, ',');
+                    System.out.println("In loop: " + i);
+                    break;
+                }
+                if (c == ' ') {
+                    flag = true;
+                    continue;
+                }
+            }
 
-            range = new StringBuilder(range).insert(range.length() - 10, ",").toString(); //to 10000
-            range = new StringBuilder(range).deleteCharAt(range.length() - 10).toString();  //to 10000
-
-            //range = new StringBuilder(range).insert(range.length() - 12, ",").toString();
-            //range = new StringBuilder(range).deleteCharAt(range.length() - 12).toString();
             System.out.println("Range: " + range);
 
             /*end of generate*/
@@ -112,4 +124,11 @@ public class MLRMCL {
         }
 
     }
+
+    private static String replaceCharAt(String s, int i, char c) {
+        StringBuffer buf = new StringBuffer(s);
+        buf.setCharAt(i, c);
+        return buf.toString();
+    }
+
 }

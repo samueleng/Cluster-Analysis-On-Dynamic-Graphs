@@ -16,8 +16,9 @@ public class ChineseWhispers {
     public static void start() throws Exception, IOException {
         Scanner userInput = new Scanner(System.in);
         String file_name;
-        //String range;
-        String range = "2000 2100,2100 2200";
+        //String range; 
+        String range = "0 100,100 200";
+        //  String range = "1000 1100,1100 1200";
         //String range = "9800 9900,9900 10000";
         boolean exists = true;
         int count, start = 0, end;
@@ -42,11 +43,20 @@ public class ChineseWhispers {
             range = Arrays.toString(range2);
             range = range.substring(1, range.length() - 1).replaceAll(",", "");
 
-            range = new StringBuilder(range).insert(range.length() - 10, ",").toString(); //to 10000
-            range = new StringBuilder(range).deleteCharAt(range.length() - 10).toString();  //to 10000
-
-            //range = new StringBuilder(range).insert(range.length() - 12, ",").toString();
-            //range = new StringBuilder(range).deleteCharAt(range.length() - 12).toString();
+            boolean flag = false;
+            for (int i = 0; i < range.length(); i++) {
+                char c = range.charAt(i);
+                System.out.println(flag);
+                if (c == ' ' && flag == true) {
+                    range = replaceCharAt(range, i, ',');
+                    System.out.println("In loop: " + i);
+                    break;
+                }
+                if (c == ' ') {
+                    flag = true;
+                    continue;
+                }
+            }
             System.out.println("Range: " + range);
 
             /*end of generate*/
@@ -92,5 +102,11 @@ public class ChineseWhispers {
             System.out.println(file.getCanonicalPath());
         }
 
+    }
+
+    private static String replaceCharAt(String s, int i, char c) {
+        StringBuffer buf = new StringBuffer(s);
+        buf.setCharAt(i, c);
+        return buf.toString();
     }
 }
