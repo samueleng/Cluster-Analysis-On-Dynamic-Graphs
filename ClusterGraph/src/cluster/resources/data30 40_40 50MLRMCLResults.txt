@@ -1,0 +1,6 @@
+Cluster Number 4 (t:30 40): Total : 2 Nodes ===> 
+Cluster Number 2 (t:40 50): 1 Nodes from (t:30 40) 1 New Nodes | Total: 2 Nodes
+-------------------------------
+Cluster Number 5 (t:30 40): Total : 2 Nodes ===> 
+Cluster Number 2 (t:40 50): 1 Nodes from (t:30 40) 1 New Nodes | Total: 2 Nodes
+-------------------------------

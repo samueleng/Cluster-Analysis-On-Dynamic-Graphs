@@ -1,0 +1,35 @@
+Cluster Number 1 (t:600 700): Total : 201 Nodes ===> 
+Cluster Number 11 (t:700 800): 6 Nodes from (t:600 700) 15 New Nodes | Total: 21 Nodes
+Cluster Number 23 (t:700 800): 1 Nodes from (t:600 700) 1 New Nodes | Total: 2 Nodes
+Cluster Number 13 (t:700 800): 1 Nodes from (t:600 700) 1 New Nodes | Total: 2 Nodes
+Cluster Number 15 (t:700 800): 1 Nodes from (t:600 700) 7 New Nodes | Total: 8 Nodes
+Cluster Number 17 (t:700 800): 2 Nodes from (t:600 700) 0 New Nodes | Total: 2 Nodes
+Cluster Number 19 (t:700 800): 1 Nodes from (t:600 700) 1 New Nodes | Total: 2 Nodes
+Cluster Number 1 (t:700 800): 1 Nodes from (t:600 700) 1 New Nodes | Total: 2 Nodes
+Cluster Number 6 (t:700 800): 1 Nodes from (t:600 700) 1 New Nodes | Total: 2 Nodes
+Cluster Number 8 (t:700 800): 2 Nodes from (t:600 700) 4 New Nodes | Total: 6 Nodes
+Cluster Number 2 (t:700 800): 12 Nodes from (t:600 700) 39 New Nodes | Total: 51 Nodes
+Cluster Number 4 (t:700 800): 1 Nodes from (t:600 700) 1 New Nodes | Total: 2 Nodes
+Cluster Number 21 (t:700 800): 1 Nodes from (t:600 700) 1 New Nodes | Total: 2 Nodes
+Cluster Number 22 (t:700 800): 1 Nodes from (t:600 700) 1 New Nodes | Total: 2 Nodes
+Cluster Number 12 (t:700 800): 5 Nodes from (t:600 700) 6 New Nodes | Total: 11 Nodes
+Cluster Number 24 (t:700 800): 1 Nodes from (t:600 700) 2 New Nodes | Total: 3 Nodes
+Cluster Number 14 (t:700 800): 4 Nodes from (t:600 700) 6 New Nodes | Total: 10 Nodes
+Cluster Number 16 (t:700 800): 1 Nodes from (t:600 700) 1 New Nodes | Total: 2 Nodes
+Cluster Number 7 (t:700 800): 1 Nodes from (t:600 700) 1 New Nodes | Total: 2 Nodes
+Cluster Number 9 (t:700 800): 1 Nodes from (t:600 700) 1 New Nodes | Total: 2 Nodes
+Cluster Number 3 (t:700 800): 1 Nodes from (t:600 700) 1 New Nodes | Total: 2 Nodes
+Cluster Number 5 (t:700 800): 7 Nodes from (t:600 700) 11 New Nodes | Total: 18 Nodes
+Cluster Number 20 (t:700 800): 1 Nodes from (t:600 700) 1 New Nodes | Total: 2 Nodes
+-------------------------------
+Cluster Number 2 (t:600 700): Total : 26 Nodes ===> 
+Cluster Number 8 (t:700 800): 1 Nodes from (t:600 700) 5 New Nodes | Total: 6 Nodes
+Cluster Number 18 (t:700 800): 1 Nodes from (t:600 700) 1 New Nodes | Total: 2 Nodes
+Cluster Number 5 (t:700 800): 2 Nodes from (t:600 700) 16 New Nodes | Total: 18 Nodes
+-------------------------------
+Cluster Number 5 (t:600 700): Total : 5 Nodes ===> 
+Cluster Number 2 (t:700 800): 1 Nodes from (t:600 700) 50 New Nodes | Total: 51 Nodes
+-------------------------------
+Cluster Number 10 (t:600 700): Total : 2 Nodes ===> 
+Cluster Number 11 (t:700 800): 1 Nodes from (t:600 700) 20 New Nodes | Total: 21 Nodes
+-------------------------------

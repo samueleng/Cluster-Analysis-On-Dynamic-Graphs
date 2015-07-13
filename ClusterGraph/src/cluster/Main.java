@@ -1,150 +1,156 @@
 package cluster;
 
+import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.embed.swing.SwingFXUtils;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.chart.CategoryAxis;
+import javafx.scene.SnapshotParameters;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.Tooltip;
+import javafx.scene.image.WritableImage;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javax.imageio.ImageIO;
+import javax.swing.JOptionPane;
 
 public class Main extends Application {
 
+    GraphUtils graphUtils = new GraphUtils();
+
+    LineChart<String, String> lineChart = null;
+
+    int previousEdge = 0;
+
     @Override
     public void start(Stage stage) throws IOException {
+        //Define a VBox
+        VBox vBox = new VBox();
+        vBox.setSpacing(5.0);
+        vBox.setPadding(new Insets(5, 5, 5, 5));
+
         //Application Title
         stage.setTitle("Timeline");
 
-        int maxClusterNumber = Integer.MIN_VALUE;
+        //input to store type of Algorithm and series of input intervals
         String algo, range;
-        int start = 0;
-
-        //defining the axes
-        final CategoryAxis xAxis = new CategoryAxis();
-        final CategoryAxis yAxis = new CategoryAxis();
-        xAxis.setLabel("Time Interval");
-        yAxis.setLabel("Number of Clusters");
-
-        //creating the chart
-        final LineChart<String, String> lineChart
-                = new LineChart<>(xAxis, yAxis);
-        lineChart.setTitle("Clusters Timeline");
-        lineChart.setAnimated(false);
-        lineChart.setCreateSymbols(true);
-        lineChart.setLegendVisible(false);
 
         //Choice of algorithm
-        algo = getAlgo();
+        algo = graphUtils.getAlgo();
 
         //Time Interval range
-        range = getRange();
+        range = graphUtils.getRange();
 
-        ResultReader rr = new ResultReader();
-        List<Map<Integer, List<Integer>>> clusterMap = rr.read(range, algo);
-
-        for (Map<Integer, List<Integer>> clusterMap1 : clusterMap) {
-            Set<Integer> keySet = clusterMap1.keySet();
-            Integer max = Collections.max(keySet);
-            if (maxClusterNumber < max) {
-                maxClusterNumber = max;
-            }
-            for (Map.Entry<Integer, List<Integer>> entrySet : clusterMap1.entrySet()) {
-                List<Integer> value = entrySet.getValue();
-                Integer max1 = Collections.max(value);
-                if (maxClusterNumber < max1) {
-                    maxClusterNumber = max1;
-                }
-            }
-        }
-        List<String> categories = new ArrayList<>();
-
-        for (int i = 1; i <= maxClusterNumber; i++) {
-            categories.add("C" + i);
-        }
-        yAxis.setCategories(FXCollections.observableList(categories));
-        if (range.split(",").length > 1) //defining a series
-        {
-            for (Map<Integer, List<Integer>> map : clusterMap) {
-                for (Map.Entry<Integer, List<Integer>> entrySet : map.entrySet()) {
-                    Integer key = entrySet.getKey();
-                    List<Integer> value = entrySet.getValue();
-                    for (Integer value1 : value) {
-                        XYChart.Series series = new XYChart.Series();
-                        series.getData().add(new XYChart.Data("T" + range.split(",")[start], "C" + (key)));
-                        series.getData().add(new XYChart.Data("T" + range.split(",")[(start + 1)], "C" + (value1)));
-                        lineChart.getData().addAll(series);
-                    }
-                }
-                start++;
-            }
+        if (range.split(",").length > 1) {
+            lineChart = graphUtils.getLineChart(range, algo, 0);
         } else {
             System.out.println("Cluster Timeline can't be plotted due to insufficient Time Intervals");
         }
 
-        final Scene scene = new Scene(lineChart, 800, 600);
+        //TableView for display
+        TableView tableView = graphUtils.getTableView();
+        //Populate the tableView
+        tableView.setItems(graphUtils.getTableData());
+
+        tableView.setOnMouseClicked((MouseEvent e) -> {
+            highlightEdge(tableView, lineChart);
+        });
+        TextField textFieldThreshold = new TextField();
+        textFieldThreshold.promptTextProperty().set("Enter Threshold value");
+
+        Button btnThreshold = new Button("Set Threshold");
+        btnThreshold.setOnMouseClicked((MouseEvent e) -> {
+            double threshold = 0;
+            try {
+                threshold = Double.parseDouble(textFieldThreshold.getText());
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Please enter numeric value only");
+                textFieldThreshold.setText("");
+                textFieldThreshold.requestFocus();
+            }
+            if (threshold >= 0) {
+                getNewLineChart(range, algo, Double.parseDouble(textFieldThreshold.getText()));
+                vBox.getChildren().remove(0);
+                vBox.getChildren().add(0, lineChart);
+                tableView.setItems(graphUtils.getTableData());
+            }
+        });
+
+        Button btnSnapShot = new Button("Take SnapShot");
+        btnSnapShot.setOnMouseClicked((MouseEvent e) -> {
+            try {
+                //To create snapshot of graph
+                WritableImage snapShot = lineChart.snapshot(new SnapshotParameters(), new WritableImage(800, 600));
+                ImageIO.write(SwingFXUtils.fromFXImage(snapShot, null), "png", new File("ClusterTimeline " + new SimpleDateFormat("yyyy-MM-dd hhmm").format(new Date()) + ".png"));
+                JOptionPane.showMessageDialog(null, "Snapshot created");
+            } catch (IOException ex) {
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
+        //ComboBox to select algorithm
+        ComboBox comboBoxAlgo = new ComboBox(FXCollections.observableArrayList("MCL", "MLRMCL", "CW"));
+        comboBoxAlgo.setPromptText("Select Algorithm");
+
+        //Take range as input
+        TextField textFieldRange = new TextField();
+        textFieldRange.promptTextProperty().set("Ex. 20 50,51 100");
+        textFieldRange.tooltipProperty().set(new Tooltip("The Time Intervals must be separated by comma(,) with no whitespace after comma"));
+
+        //Create LineChart based on Input Range
+        Button btnCreateChart = new Button("Create Chart");
+        btnCreateChart.setOnMouseClicked((MouseEvent e) -> {
+            String inputAlgo = (String) comboBoxAlgo.getSelectionModel().getSelectedItem();
+            String inputRange = textFieldRange.getText();
+            System.out.println(inputAlgo);
+            System.out.println(inputRange);
+            if (inputAlgo != null && inputRange != null) {
+                getNewLineChart(inputRange, inputAlgo, 0);
+                vBox.getChildren().remove(0);
+                vBox.getChildren().add(0, lineChart);
+                tableView.setItems(graphUtils.getTableData());
+            } else {
+                JOptionPane.showMessageDialog(null, "Please select Alogrithm Category and give range");
+            }
+        });
+        HBox hBox = new HBox(5);
+        hBox.getChildren().addAll(textFieldThreshold, btnThreshold, btnSnapShot, comboBoxAlgo, textFieldRange, btnCreateChart);
+        vBox.getChildren().addAll(lineChart, tableView, hBox);
+        
+        //Adding VBox to the scene
+        final Scene scene = new Scene(vBox, 700, 700);
         scene.getStylesheets().add(getClass().getResource("styles/global.css").toExternalForm());
 
-        //To create snapshot of graph
-//        WritableImage snapShot = lineChart.snapshot(new SnapshotParameters(), new WritableImage(800, 600));
-//        ImageIO.write(SwingFXUtils.fromFXImage(snapShot, null), "png", new File("ClusterTimeline " + new SimpleDateFormat("yyyy-MM-dd hhmm").format(new Date()) + ".png"));
         stage.setScene(scene);
         stage.show();
-
     }
 
     public static void main(String[] args) {
         launch(args);
     }
 
-    public String getAlgo() {
-        Scanner src = new Scanner(System.in);
-        String algo = null;
-        int algoChoice;
-        do {
-            System.out.println("Select the clustering Algorithm of your choice");
-            System.out.println("1. MCL");
-            System.out.println("2. MLRMCL");
-            System.out.println("3. ChineseWhispers");
-            algoChoice = src.nextInt();
-            switch (algoChoice) {
-                case 1:
-                    algo = "MCL";
-                    break;
-                case 2:
-                    algo = "MLRMCL";
-                    break;
-                case 3:
-                    algo = "CW";
-                    break;
-                default:
-                    System.out.println("Invalid choice try again");
-            }
-        } while (algoChoice < 1 || algoChoice > 3);
-        return algo;
+    private void getNewLineChart(String range, String algo, double threshold) {
+        previousEdge = 0;
+        lineChart = graphUtils.getLineChart(range, algo, threshold);
     }
 
-    public String getRange() {
-        Scanner src = new Scanner(System.in);
-        String range;
-        int count;
-        do {
-            System.out.println("Enter value of compared cluster's Time Intervals to create the Cluster Timeline");
-            System.out.println("The Time Intervals must be separated by comma(,) with no whitespace after comma");
-            System.out.println("Ex. 20 50,51 100");
-//                range = src.nextLine();
-            range = src.nextLine();
-            count = range.split(",").length;
-            if (count <= 1) {
-                System.out.println("Please enter more than one Time Interval of Compare Cluster to create the Cluster Timeline");
-            }
-        } while (count <= 1);
-        return range;
+    private void highlightEdge(TableView tableView, LineChart<String, String> lineChart) {
+        ObservableList<XYChart.Series<String, String>> data = lineChart.getData();
+        data.get(previousEdge).getNode().setStyle("-fx-stroke:black;");
+        data.get(tableView.getSelectionModel().getSelectedIndex()).getNode().setStyle("-fx-stroke:red;");
+        previousEdge = tableView.getSelectionModel().getSelectedIndex();
     }
 }

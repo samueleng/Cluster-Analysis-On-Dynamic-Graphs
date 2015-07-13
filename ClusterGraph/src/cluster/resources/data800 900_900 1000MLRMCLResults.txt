@@ -1,0 +1,32 @@
+Cluster Number 12 (t:800 900): Total : 22 Nodes ===> 
+Cluster Number 3 (t:900 1000): 1 Nodes from (t:800 900) 117 New Nodes | Total: 118 Nodes
+Cluster Number 1 (t:900 1000): 1 Nodes from (t:800 900) 5 New Nodes | Total: 6 Nodes
+-------------------------------
+Cluster Number 14 (t:800 900): Total : 6 Nodes ===> 
+Cluster Number 3 (t:900 1000): 1 Nodes from (t:800 900) 117 New Nodes | Total: 118 Nodes
+-------------------------------
+Cluster Number 15 (t:800 900): Total : 6 Nodes ===> 
+Cluster Number 3 (t:900 1000): 1 Nodes from (t:800 900) 117 New Nodes | Total: 118 Nodes
+-------------------------------
+Cluster Number 1 (t:800 900): Total : 14 Nodes ===> 
+Cluster Number 1 (t:900 1000): 1 Nodes from (t:800 900) 5 New Nodes | Total: 6 Nodes
+-------------------------------
+Cluster Number 6 (t:800 900): Total : 10 Nodes ===> 
+Cluster Number 1 (t:900 1000): 1 Nodes from (t:800 900) 5 New Nodes | Total: 6 Nodes
+-------------------------------
+Cluster Number 2 (t:800 900): Total : 8 Nodes ===> 
+Cluster Number 2 (t:900 1000): 1 Nodes from (t:800 900) 1 New Nodes | Total: 2 Nodes
+Cluster Number 3 (t:900 1000): 1 Nodes from (t:800 900) 117 New Nodes | Total: 118 Nodes
+-------------------------------
+Cluster Number 3 (t:800 900): Total : 2 Nodes ===> 
+Cluster Number 3 (t:900 1000): 1 Nodes from (t:800 900) 117 New Nodes | Total: 118 Nodes
+-------------------------------
+Cluster Number 4 (t:800 900): Total : 8 Nodes ===> 
+Cluster Number 3 (t:900 1000): 1 Nodes from (t:800 900) 117 New Nodes | Total: 118 Nodes
+-------------------------------
+Cluster Number 5 (t:800 900): Total : 23 Nodes ===> 
+Cluster Number 1 (t:900 1000): 1 Nodes from (t:800 900) 5 New Nodes | Total: 6 Nodes
+-------------------------------
+Cluster Number 20 (t:800 900): Total : 2 Nodes ===> 
+Cluster Number 7 (t:900 1000): 1 Nodes from (t:800 900) 1 New Nodes | Total: 2 Nodes
+-------------------------------

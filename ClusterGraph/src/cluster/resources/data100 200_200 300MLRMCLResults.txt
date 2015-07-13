@@ -1,14 +1,19 @@
-Cluster Number 2 (t:100 200): Total : 12 Nodes ===> 
-Cluster Number 2 (t:200 300): 1 Nodes from (t:100 200) 11 New Nodes | Total: 12 Nodes
-Cluster Number 1 (t:200 300): 4 Nodes from (t:100 200) 53 New Nodes | Total: 57 Nodes
+Cluster Number 13 (t:100 200): Total : 3 Nodes ===> 
+Cluster Number 1 (t:200 300): 3 Nodes from (t:100 200) 144 New Nodes | Total: 147 Nodes
 -------------------------------
-Cluster Number 3 (t:100 200): Total : 25 Nodes ===> 
-Cluster Number 2 (t:200 300): 3 Nodes from (t:100 200) 9 New Nodes | Total: 12 Nodes
-Cluster Number 4 (t:200 300): 1 Nodes from (t:100 200) 1 New Nodes | Total: 2 Nodes
-Cluster Number 1 (t:200 300): 6 Nodes from (t:100 200) 51 New Nodes | Total: 57 Nodes
+Cluster Number 1 (t:100 200): Total : 8 Nodes ===> 
+Cluster Number 1 (t:200 300): 1 Nodes from (t:100 200) 146 New Nodes | Total: 147 Nodes
 -------------------------------
-Cluster Number 1 (t:100 200): Total : 30 Nodes ===> 
-Cluster Number 2 (t:200 300): 2 Nodes from (t:100 200) 10 New Nodes | Total: 12 Nodes
-Cluster Number 3 (t:200 300): 3 Nodes from (t:100 200) 3 New Nodes | Total: 6 Nodes
-Cluster Number 1 (t:200 300): 11 Nodes from (t:100 200) 46 New Nodes | Total: 57 Nodes
+Cluster Number 8 (t:100 200): Total : 3 Nodes ===> 
+Cluster Number 1 (t:200 300): 1 Nodes from (t:100 200) 146 New Nodes | Total: 147 Nodes
+-------------------------------
+Cluster Number 2 (t:100 200): Total : 11 Nodes ===> 
+Cluster Number 8 (t:200 300): 1 Nodes from (t:100 200) 0 New Nodes | Total: 1 Nodes
+-------------------------------
+Cluster Number 4 (t:100 200): Total : 54 Nodes ===> 
+Cluster Number 7 (t:200 300): 1 Nodes from (t:100 200) 1 New Nodes | Total: 2 Nodes
+Cluster Number 1 (t:200 300): 5 Nodes from (t:100 200) 142 New Nodes | Total: 147 Nodes
+-------------------------------
+Cluster Number 5 (t:100 200): Total : 11 Nodes ===> 
+Cluster Number 9 (t:200 300): 1 Nodes from (t:100 200) 1 New Nodes | Total: 2 Nodes
 -------------------------------

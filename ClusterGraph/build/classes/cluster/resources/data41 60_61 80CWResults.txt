@@ -1,6 +1,0 @@
-Cluster Number 4 :(t:41 60): Total :9 Nodes ===>
-Cluster Number 2 :(t:61 80): 1 Nodes from (t:41 60) 4 New Nodes | Total:5 Nodes
--------------------------------------
-Cluster Number 2 :(t:41 60): Total :8 Nodes ===>
-Cluster Number 1 :(t:61 80): 1 Nodes from (t:41 60) 14 New Nodes | Total:15 Nodes
--------------------------------------

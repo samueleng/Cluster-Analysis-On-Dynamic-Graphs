@@ -1,19 +1,21 @@
-/*.default-color1.chart-symbol {
-    -fx-background-color: #a9e200;
-    -fx-shape: "M0,4 L2,4 L4,8 L7,0 L9,0 L4,11 Z";
-}*/
 .chart-alternative-row-fill {
     -fx-fill: transparent;
     -fx-stroke: transparent;
     -fx-stroke-width: 0;
 }
 .chart-series-line {    
-    /*-fx-stroke-width: 2px;*/
     -fx-stroke-line-cap: square;
     -fx-stroke-line-join:round; 
-  
+    -fx-stroke:black;
 }
-.data*.chart-series-line{
-    -fx-stroke: transparent;
-    -fx-symbol-visible: false;
+.chart-line-symbol {
+    -fx-background-color: black, white;
+    -fx-background-insets: 0, 2;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
 }
+
+/*.default-color0.chart-series-line { 
+    -fx-stroke: black; 
+}
+*/

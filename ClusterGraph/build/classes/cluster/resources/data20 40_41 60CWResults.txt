@@ -1,7 +1,0 @@
-Cluster Number 3 :(t:20 40): Total :4 Nodes ===>
-Cluster Number 3 :(t:41 60): 3 Nodes from (t:20 40) 2 New Nodes | Total:3 Nodes
--------------------------------------
-Cluster Number 1 :(t:20 40): Total :14 Nodes ===>
-Cluster Number 4 :(t:41 60): 1 Nodes from (t:20 40) 8 New Nodes | Total:9 Nodes
-Cluster Number 1 :(t:41 60): 1 Nodes from (t:20 40) 2 New Nodes | Total:3 Nodes
--------------------------------------
