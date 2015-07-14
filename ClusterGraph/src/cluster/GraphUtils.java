@@ -35,7 +35,8 @@ public class GraphUtils {
 
     String clusterLog;
     List<String> logs = new ArrayList<>();
-    static DecimalFormat df = new DecimalFormat("#.##");
+    static DecimalFormat df = new DecimalFormat("#.##"); 
+    
     //List to store records
     ObservableList<Record> recordList = FXCollections.observableArrayList();
 
@@ -88,14 +89,13 @@ public class GraphUtils {
         List<Map<Integer, List<Integer>>> list = new ArrayList<>();
 
         int count, start = 0;
-        double totalParentNodes = 0.0, commonNodes = 0.0;
+        int totalParentNodes = 0, commonNodes = 0;
         count = range.split(",").length;
         while (count != 1) {
             String t1 = range.split(",")[start];
             String t2 = range.split(",")[start + 1];
             Map<Integer, List<Integer>> mapping = new TreeMap<>();
             String fileName = "data" + t1 + "_" + t2 + algo + "Results.txt";
-//            System.out.println(fileName);
             try (Scanner in = new Scanner(getClass().getClassLoader().getResourceAsStream("cluster/resources/" + fileName))) {
                 Pattern p2 = Pattern.compile("(\\s\\d+)");
                 boolean newCluster = true;
@@ -103,26 +103,20 @@ public class GraphUtils {
                 Integer parentCluster = 0, childCluster;
                 while (in.hasNext()) {
                     String line = in.nextLine();
-//                    System.out.println(line);
                     String[] matches = match(line, "/(\\d+)/g"); // => ["11", "22"]
                     if (newCluster) {
-                        totalParentNodes = Double.parseDouble(matches[3].trim());
-//                        System.out.println("total Parent Nodes: " + totalParentNodes);
+                        totalParentNodes = Integer.parseInt(matches[3].trim());
                         Matcher m = p2.matcher(line);
                         newCluster = false;
                         m.find();
                         parentCluster = new Integer(m.group().trim());
-//                        System.out.println("Parent: " + parentCluster);
                     } else if (!line.contains("-")) {
                         Matcher m = p2.matcher(line);
                         m.find();
                         try {
-                            commonNodes = Double.parseDouble(matches[3].trim());
-//                            System.out.println("overlapping: " + overlappingNodes);
+                            commonNodes = Integer.parseInt(matches[3].trim());
                             childCluster = new Integer(m.group().trim());
-//                            System.out.println("Child: " + childCluster);
                         } catch (IllegalStateException ex) {
-//                            System.out.println("exception called");
                             continue;
                         }
                         clusterLog = parentCluster + "==>" + childCluster + "\t";
@@ -152,11 +146,11 @@ public class GraphUtils {
             start++;
             count--;
         }
-//        System.out.println("List:" + list);
         return list;
     }
 
-    public TableView getTableView() {
+    public TableView getTableView() { 
+        
         //Creating a TableView to display overlapping nodes
         TableView tableView = new TableView();
 
@@ -182,7 +176,6 @@ public class GraphUtils {
         threshold.setMinWidth(60);
 
         //Add record list
-//        tableView.setItems(recordList);
         tableView.setEditable(false);
         tableView.getColumns().addAll(interval, parentToChild, parentNodes, overlappingNodes, threshold);
         return tableView;
@@ -193,12 +186,10 @@ public class GraphUtils {
     }
 
     private double getThreshold(double totalParentNodes, double overlappingNodes, String t1, String t2) {
-//        System.out.println("Checking threshold");
         double threshold = Double.valueOf(df.format((overlappingNodes / totalParentNodes) * 100.0));
         clusterLog += totalParentNodes + "    " + overlappingNodes + "    " + threshold;
         logs.add(clusterLog);
         clusterLog = "";
-//        System.out.println(threshold);
         return threshold;
     }
 
@@ -282,7 +273,6 @@ public class GraphUtils {
             System.out.println("Enter value of compared cluster's Time Intervals to create the Cluster Timeline");
             System.out.println("The Time Intervals must be separated by comma(,) with no whitespace after comma");
             System.out.println("Ex. 20 50,51 100");
-//                range = src.nextLine();
             range = src.nextLine();
             count = range.split(",").length;
             if (count <= 1) {

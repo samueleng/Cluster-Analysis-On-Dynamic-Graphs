@@ -37,7 +37,8 @@ public class Main extends Application {
     int previousEdge = 0;
 
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) throws IOException { 
+        
         //Define a VBox
         VBox vBox = new VBox();
         vBox.setSpacing(5.0);
@@ -62,8 +63,9 @@ public class Main extends Application {
         }
 
         //TableView for display
-        TableView tableView = graphUtils.getTableView();
-        //Populate the tableView
+        TableView tableView = graphUtils.getTableView(); 
+        
+        //Populate the tableView 
         tableView.setItems(graphUtils.getTableData());
 
         tableView.setOnMouseClicked((MouseEvent e) -> {
@@ -90,7 +92,8 @@ public class Main extends Application {
             }
         });
 
-        Button btnSnapShot = new Button("Take SnapShot");
+        Button btnSnapShot = new Button("Take SnapShot"); 
+        
         btnSnapShot.setOnMouseClicked((MouseEvent e) -> {
             try {
                 //To create snapshot of graph
@@ -100,7 +103,8 @@ public class Main extends Application {
             } catch (IOException ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             }
-        });
+        }); 
+        
         //ComboBox to select algorithm
         ComboBox comboBoxAlgo = new ComboBox(FXCollections.observableArrayList("MCL", "MLRMCL", "CW"));
         comboBoxAlgo.setPromptText("Select Algorithm");
@@ -123,9 +127,10 @@ public class Main extends Application {
                 vBox.getChildren().add(0, lineChart);
                 tableView.setItems(graphUtils.getTableData());
             } else {
-                JOptionPane.showMessageDialog(null, "Please select Alogrithm Category and give range");
+                JOptionPane.showMessageDialog(null, "Please select Algorithm Category and give range");
             }
-        });
+        }); 
+        
         HBox hBox = new HBox(5);
         hBox.getChildren().addAll(textFieldThreshold, btnThreshold, btnSnapShot, comboBoxAlgo, textFieldRange, btnCreateChart);
         vBox.getChildren().addAll(lineChart, tableView, hBox);
