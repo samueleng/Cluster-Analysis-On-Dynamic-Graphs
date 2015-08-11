@@ -15,6 +15,7 @@ public class readWriteHashMap {
 
     public void writeHashMap(HashMap hashmap) throws IOException {
         File file = new File(Utils.getFilePath() + "/MCLAlgorithm/result/results1000.txt");
+//        File file = new File("/home/deepak/freelance/results/results1000.txt");//your file
         {
             try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
                 for (Object p : hashmap.keySet()) {
@@ -25,7 +26,7 @@ public class readWriteHashMap {
             }
         }
 
-    }//end of writeHashMap method
+    }//end of writeHashMap method 
 
     public void readHashMap() throws IOException {
         System.out.println("*******READING HASHMAP********");
@@ -83,7 +84,7 @@ public class readWriteHashMap {
         System.out.println(hMapNotInMap.toString());
         System.out.println("**************************************");
 
-    }//end of compareHashSet method
+    }//end of compareHashSet method 
 
 }//end of class
 

@@ -38,7 +38,7 @@ public class MCLApp {
      flow to connect different regions of the graph. */
     public static int power = 2; //expansion power of 2 as default
     /*The inflation parameter affects cluster granularity*/
-    public static double inflate = 2; //inflation of 2 (squaring)
+    public static double inflate = 2; //inflation of 2 (squaring)  
 
     /*HashMap init*/
     static readWriteHashMap rwHash = new readWriteHashMap();
@@ -60,7 +60,7 @@ public class MCLApp {
         /*Assign corresponding role/column*/
         adjMatrix.get(node1).c[node2] = 1;
         adjMatrix.get(node2).c[node1] = 1;
-        //System.out.println("Edge between: " + node1 + " and: " + node2);
+        System.out.println("Edge between: " + node1 + " and: " + node2);
     }
 
     public void readData(String fileName) throws FileNotFoundException, IOException {
@@ -71,8 +71,7 @@ public class MCLApp {
         FileName = fileName;
         int numberOfEdges = 0;
         boolean empty = true;
-        /*Read datasets from the folder (nodes)*/ 
-        System.out.println(FileName);
+        /*Read datasets from the folder (nodes)*/
         try (BufferedReader inFile = new BufferedReader(new FileReader(new File(Utils.getFilePath() + "/MCLAlgorithm/resource/" + FileName)))) {
             while ((current_line = inFile.readLine()) != null) {
                 empty = false;
@@ -80,7 +79,7 @@ public class MCLApp {
                 numberOfEdges++;
 
                 /*This tk is for those files with tab delimiter*/
-                //items = new StringTokenizer(current_line, " ");
+                //items = new StringTokenizer(current_line, " "); 
                 /*This tk is for those files with comma delimiter*/
                 items = new StringTokenizer(current_line, ",");
 
@@ -147,7 +146,7 @@ public class MCLApp {
      The addition of self looping edges on each node
      resolves this.
      Adds a small path of length 1, so the mass does not only
-     appear during odd powers of the matrix.
+     appear during odd powers of the matrix. 
      */
     public void addSelfLoop() {
         for (int i = 0; i < dimensions; i++) {
@@ -175,11 +174,11 @@ public class MCLApp {
         }
     }
 
-    /*Convergence to a state where probability is steady such that every column value has the same
+    /*Convergence to a state where probability is steady such that every column value has the same 
      number. Returns a true/false value*/
     public boolean checkConvergence() {
         double prev = -1;
-        /*Use the previous variable (prev) to check if after inflation/expansion if the value of columns are the same
+        /*Use the previous variable (prev) to check if after inflation/expansion if the value of columns are the same 
          if it is not the same, return false and continue to run while loop*/
         for (int j = 0; j < dimensions; j++) {
             for (int i = 0; i < dimensions; i++) {
@@ -199,10 +198,10 @@ public class MCLApp {
         return true;
     }
 
-    /* Expansion coincides with taking the power of a stochastic matrix using the normal matrix product (i.e. matrix squaring)
-     Expansion corresponds to computing random walks of higher length, which means random walks with many steps.
-     It associates new probabilities with all pairs of nodes, where one node is the point of departure and the other is the destination.
-     Since higher length paths are more common within clusters than between different clusters, the probabilities associated with node pairs
+    /* Expansion coincides with taking the power of a stochastic matrix using the normal matrix product (i.e. matrix squaring) 
+     Expansion corresponds to computing random walks of higher length, which means random walks with many steps.  
+     It associates new probabilities with all pairs of nodes, where one node is the point of departure and the other is the destination.  
+     Since higher length paths are more common within clusters than between different clusters, the probabilities associated with node pairs  
      lying in the same cluster will, in general, be relatively large as there are many ways of going from one to the other. */
     public Matrix<DoubleContainer> expand() {
         Matrix<DoubleContainer> matrix = new Matrix<>(DoubleContainer.class, dimensions, dimensions, d -> new DoubleContainer(d));
@@ -226,7 +225,7 @@ public class MCLApp {
      strengthening / weakening. (In the end, this influences the granularity of clusters.)*/
     public void inflate() {
         double[] sum = new double[dimensions];
-        /* multiplication of two matrices of the same size can be defined by multiplying the corresponding entries
+        /* multiplication of two matrices of the same size can be defined by multiplying the corresponding entries 
          and this is known as the Hadamard product.*/
         for (int j = 0; j < dimensions; j++) {
             for (int i = 0; i < dimensions; i++) {
@@ -240,7 +239,7 @@ public class MCLApp {
         }
     }
 
-    /*Reduces iteration, improves speed: The threshold is one fourth of the average of all the entries in a column.
+    /*Reduces iteration, improves speed: The threshold is one fourth of the average of all the entries in a column. 
      Any value less than that (0.25) will be set to 0 (Assuming they will reach there anyway*/
     public void prune() {
         Matrix<DoubleContainer> matrix = new Matrix<>(DoubleContainer.class, dimensions, dimensions, d -> new DoubleContainer(d));
@@ -284,8 +283,8 @@ public class MCLApp {
     }
 
     /*Implementation of the Markov clustering algorithm
-     Expand
-     Inflate
+     Expand 
+     Inflate  
      Pruning
      Normalize the matrix
      Do the above until convergence
@@ -344,7 +343,6 @@ public class MCLApp {
                             if (value == e) {
                                 if (!checkSet.contains(key)) {
                                     keySet.add(key);
-//                                    System.out.print(key + ",");
                                     fileMap.put(key, clusterNumber);
                                 }
 

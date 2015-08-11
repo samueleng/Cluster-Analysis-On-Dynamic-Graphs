@@ -83,13 +83,15 @@ public class Utils {
 
                             //Write in result file
                             writer.println(temp.size() + " New Nodes | Total: " + childValue.size() + " Nodes");
-//                            writer.println(" | Total: " + childValue.size() + " Nodes");
                             printer.println("New Nodes: " + temp);
+                        }
+                        else{
+                            writer.println();
                         }
                         System.out.println();
                     } else if (!Collections.disjoint(parentValue, childValue)) {
                         matchFound = true;
-                        //So that the text isn't printed for a parentCluster having no common elements in any of the childClusters
+                   
                         if (out != null) {
                             System.out.println(out);
                             writer.println(out);
@@ -105,7 +107,6 @@ public class Utils {
 
                         //Write in result file
                         writer.println(childKey + "(t:" + t2 + "): " + intersection(parentValue, childValue).size() + " Nodes from (t:" + t1 + ") " + temp.size() + " New Nodes | Total: " + childValue.size() + " Nodes");
-//                        writer.println(temp.size() + " New Nodes | Total: " + childValue.size() + " Nodes");
 
                         //write in detailed result file
                         printer.println(childKey + " (t:" + t2 + "): " + childValue);
@@ -115,7 +116,7 @@ public class Utils {
                 if (matchFound) {
                     System.out.println("");
                     writer.println("-------------------------------");
-                    printer.println();
+                    printer.println("-------------------------------");
                 }
 
             }
@@ -158,7 +159,6 @@ public class Utils {
     }
 
     public static boolean fileExists(String fileName) {
-        System.out.println(getFilePath() + "/MCLAlgorithm/ClusterResults/R-MCL and MCL test/data" + fileName + "MCLResults.txt");
         return new File(getFilePath() + "/MCLAlgorithm/ClusterResults/R-MCL and MCL test/data" + fileName + "MCLResults.txt").exists();
     }
 
